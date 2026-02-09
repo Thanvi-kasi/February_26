@@ -12,7 +12,7 @@ class Solution:
         if not head:
             return None
 
-        # 1️⃣ Insert copied nodes right after original nodes
+        # 1️ Insert copied nodes right after original nodes
         curr = head
         while curr:
             new_node = Node(curr.val)
@@ -20,14 +20,14 @@ class Solution:
             curr.next = new_node
             curr = new_node.next
 
-        # 2️⃣ Assign random pointers for copied nodes
+        # 2️ Assign random pointers for copied nodes
         curr = head
         while curr:
             if curr.random:
                 curr.next.random = curr.random.next
             curr = curr.next.next
 
-        # 3️⃣ Separate the original list and copied list
+        # 3️ Separate the original list and copied list
         curr = head
         copy_head = head.next
 
